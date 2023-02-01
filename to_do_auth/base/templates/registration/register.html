@@ -1,0 +1,32 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="l-form">
+    
+    <form role="form" autocomplete="off" class="form-horizontal" method="post" autocomplete="off">
+        {% csrf_token %}
+        <h1 class="form__title">Create Account</h1>
+        
+        <div class="form__div">
+            <input type="input" class="form__input" name="username" required >
+            <label for=""class="form__label">Username</label>
+        </div>
+        <div class="form__div">
+            <input type="password" class="form__input" name="password1"required>
+            <label for=""class="form__label">Password</label>
+        </div>
+            <div class="form__div">
+            <input type="password" class="form__input" name="password2"required>
+            <label for=""class="form__label">Confirm Password</label>
+        </div>
+
+        {{ form.non_field_errors }}
+        <a href="{% url 'login'%}" class="link__button">Sign in instead</a>
+        <input type="submit" class="form__button" value="Register" />
+
+    </form>
+    
+</div>
+
+
+{% endblock content %}
